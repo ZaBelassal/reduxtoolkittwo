@@ -1,6 +1,10 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
 
-function SideBar({name , isChanged}) {
+
+function SideBar() {
+    const name = useSelector(state=>state.user.name)
+
   return (
     <div>
         <ul>
@@ -8,7 +12,7 @@ function SideBar({name , isChanged}) {
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Hello {isChanged && name}</a></li>
+            <li><a href="#">Hello {name}</a></li>
         </ul>
     </div>
   )
